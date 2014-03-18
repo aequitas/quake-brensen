@@ -1,0 +1,20 @@
+---
+- name: install supervisor
+  apt: name=supervisor state=latest
+
+- name: fallback maprotate
+  template: src=maps.cfg dest=/mnt/openarena/.openarena/baseoa/maps.cfg
+  notify: restart openarena
+
+- name: openarena server config
+  template: src=server.cfg dest=/mnt/openarena/.openarena/baseoa/server.cfg
+  notify: restart openarena
+
+- name: openarena supervisor config
+  template: src=openarena.conf dest=/etc/supervisor/conf.d/openarena.conf
+  notify: restart openarena
+
+- name: maps
+  get_url: url=http://ws.q3df.org/maps/downloads/{{item}}.pk3 dest=/mnt/openarena/baseoa/{{item}}.pk3
+  with_items: maps
+  notify: restart openarena

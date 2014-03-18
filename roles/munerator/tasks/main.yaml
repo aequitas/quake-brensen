@@ -1,0 +1,11 @@
+---
+- name: install supervisor
+  apt: name=supervisor state=latest
+
+- name: install munerator
+  pip: name=munerator state=latest
+
+- name: munerator supervisor config
+  template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
+  notify: restart munerator
+

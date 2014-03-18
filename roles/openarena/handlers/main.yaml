@@ -1,0 +1,3 @@
+---
+- name: restart openarena
+  supervisorctl: name=openarena state=restarted

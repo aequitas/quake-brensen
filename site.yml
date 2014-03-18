@@ -1,0 +1,14 @@
+#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass
+
+---
+- name: Openarena
+  hosts: brensen
+  user: root
+  remote_user: johanadm
+  sudo: yes
+  vars_files:
+    - vars.yaml
+
+  roles:
+    - munerator
+    - openarena
