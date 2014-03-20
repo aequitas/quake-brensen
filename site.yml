@@ -1,4 +1,4 @@
-#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass
+#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass --skip-tag maps
 
 ---
 - name: Openarena
@@ -10,5 +10,5 @@
     - vars.yaml
 
   roles:
-    - munerator
+    - { role: munerator, tags: ['munerator'] }
     - openarena

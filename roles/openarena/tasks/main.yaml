@@ -18,3 +18,5 @@
   get_url: url=http://ws.q3df.org/maps/downloads/{{item}}.pk3 dest=/mnt/openarena/baseoa/{{item}}.pk3
   with_items: maps
   notify: restart openarena
+  tags:
+    - maps
