@@ -1,4 +1,4 @@
-#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass --skip-tag maps
+#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass --timeout=30
 
 ---
 - name: Openarena

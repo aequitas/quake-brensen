@@ -1,105 +1,117 @@
 # maps from: http://ws.q3df.org/maps
 ---
-maps:
-    - q3ctf4+
-    - 0ups_beta2a
-    - aqua
-    - el3dm1
-    - lsdm3_v1
-    - map_wvwq3dm7
-    - rota3dm2
-    - 79drdm5_beta2
-    - bal3dm5
-    - gaeldm1
-    - map-13vast
-    - meatpak
-    - seasons1
-    - 79drgc2
-    - bal3void1
-    - geo-core
-    - map-aedesert
-    - meatpak_two
-    - platypus
-    - shad3dm2
-    - Bal3dm3
-    - bal3void2
-    - geo2_AD5
-    - map-af3hex
-    - minima
-    - plutonians
-    - sokar3d
-    - Bal3dm4
-    - bastir
-    - gibtech
-    - map-alpha3d
-    - monolith
-    - pom_bots
-    - sokar3dm5
-    - CMP1-dm6
-    - batcula
-    - gon2
-    - map-charon3dm13
-    - moonstone
-    - pukka3dm1
-    - sparth
-    - HandsOfGod
-    - boxen
-    - hal_palindrome
-    - map-estatica-cardigan
-    - mythology
-    - pukka3dm2
-    - stralegeo1v2
-    - LetGo_q3a
-    - bubctf1
-    - hibernia
-    - map-kellblack
-    - nook3dm2pro
-    - pukka3tourney2
-    - syq3dm1
-    - Opc1
-    - ca-supplice
-    - hindustry
-    - map-mictourney1a
-    - oaN
-    - q3arc1
-    - tanq3a_dm1
-    - SumCTF1
-    - cf
-    - ik3dm2
-    - map-plduel1
-    - q3ctf4+
-    - trajectory
-    - TeamTemple_q3a
-    - cmp1-dm5
-    - jaxdm9
-    - map-post
-    - q3dade12
-    - ut_subway
-    - XPac_BT
-    - dantesca
-    - jaxtourney2
-    - map-qfraggel3
-    - q3shw19
-    - woa
-    - alkdm13
-    - deadmeat
-    - klcurves
-    - map-rjlctf2
-    - qbeast
-    - yog3dm2
-    - alkdm14
-    - distonic_small
-    - klzegypt
-    - map-scorpion-cardigan
-    - quimera
-    - ame7q3tny1
-    - dk_ib
-    - krctf02
-    - map_oxodm4
-    - quintdm3
-    - apocalyptica
-    - dubneoc
-    - leafland
-    - map_wvwq3dm4
-    - reqkitchen
-    - wtf-q3a_v3
+map_sources:
+    - url: http://auth-83051f68-ec6c-44e0-afe5-bd8902acff57.cdn.spilcloud.com/quake
+      maps:
+        - name: 1396355052_spilgames
+          mapname: spilgames
+          force: true
+
+    - url: http://ws.q3df.org/maps/downloads
+      maps:
+        - name: q3ctf4+
+        - name: 0ups_beta2a
+        - name: aqua
+        - name: el3dm1
+        - name: lsdm3_v1
+        - name: map_wvwq3dm7
+        - name: rota3dm2
+        - name: 79drdm5_beta2
+        - name: bal3dm5
+        - name: gaeldm1
+        - name: map-13vast
+        - name: meatpak
+        - name: seasons1
+        - name: 79drgc2
+        - name: bal3void1
+        - name: geo-core
+        - name: map-aedesert
+        - name: meatpak_two
+        - name: platypus
+        - name: shad3dm2
+        - name: Bal3dm3
+        - name: bal3void2
+        - name: geo2_AD5
+        - name: map-af3hex
+        - name: minima
+        - name: plutonians
+        - name: sokar3d
+        - name: Bal3dm4
+        - name: bastir
+        - name: gibtech
+        - name: map-alpha3d
+        - name: monolith
+        - name: pom_bots
+        - name: sokar3dm5
+        - name: CMP1-dm6
+        - name: batcula
+        - name: gon2
+        - name: map-charon3dm13
+        - name: moonstone
+        - name: pukka3dm1
+        - name: sparth
+        - name: HandsOfGod
+        - name: boxen
+        - name: hal_palindrome
+        - name: map-estatica-cardigan
+        - name: mythology
+        - name: pukka3dm2
+        - name: stralegeo1v2
+        - name: LetGo_q3a
+        - name: bubctf1
+        - name: hibernia
+        - name: map-kellblack
+        - name: nook3dm2pro
+        - name: pukka3tourney2
+        - name: syq3dm1
+        - name: Opc1
+        - name: ca-supplice
+        - name: hindustry
+        - name: map-mictourney1a
+        - name: oaN
+        - name: q3arc1
+        - name: tanq3a_dm1
+        - name: SumCTF1
+        - name: cf
+        - name: ik3dm2
+        - name: map-plduel1
+        - name: q3ctf4+
+        - name: trajectory
+        - name: TeamTemple_q3a
+        - name: cmp1-dm5
+        - name: jaxdm9
+        - name: map-post
+        - name: q3dade12
+        - name: ut_subway
+        - name: XPac_BT
+        - name: dantesca
+        - name: jaxtourney2
+        - name: map-qfraggel3
+        - name: q3shw19
+        - name: woa
+        - name: alkdm13
+        - name: deadmeat
+        - name: klcurves
+        - name: map-rjlctf2
+        - name: qbeast
+        - name: yog3dm2
+        - name: alkdm14
+        - name: distonic_small
+        - name: klzegypt
+        - name: map-scorpion-cardigan
+        - name: quimera
+        - name: ame7q3tny1
+        - name: dk_ib
+        - name: krctf02
+        - name: map_oxodm4
+        - name: quintdm3
+        - name: apocalyptica
+        - name: dubneoc
+        - name: leafland
+        - name: map_wvwq3dm4
+        - name: reqkitchen
+        - name: wtf-q3a_v3
+        - name: pasctf3
+        - name: czq3p61ctf1
+        - name: 17+
+        - name: 17+CTF
