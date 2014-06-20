@@ -11,4 +11,5 @@
 
   roles:
     - { role: munerator, tags: ['munerator'] }
-    - openarena
+    - { role: openarena, tags: ['openarena'] }
+    - { role: nginx, tags: ['nginx'] }

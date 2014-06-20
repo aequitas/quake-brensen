@@ -112,6 +112,6 @@ map_sources:
         - name: reqkitchen
         - name: wtf-q3a_v3
         - name: pasctf3
-        - name: czq3p61ctf1
+        - name: map-czq3p61ctf1
         - name: 17+
         - name: 17+CTF
