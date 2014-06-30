@@ -10,3 +10,13 @@
   template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
   notify: restart munerator
 
+- name: install mongodb
+  apt: name=mongodb state=latest
+
+- name: mongo config
+  lineinfile: dest=/etc/mongodb.conf regexp=^dbpath= line=dbpath={{oa_base}}/munerator_db/
+  notify: restart mongodb
+
+- name: mongo database
+  file: dest={{oa_base}}/munerator_db state=directory owner=mongodb group=mongodb
+  notify: restart mongodb

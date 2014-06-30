@@ -1,3 +1,6 @@
 ---
 - name: restart munerator
   supervisorctl: name='munerator:' state=restarted
+
+- name: restart mongodb
+  service: name=mongodb state=restarted
