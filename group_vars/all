@@ -1,5 +1,6 @@
 # maps from: http://ws.q3df.org/maps
 ---
+rcon_password: 
 map_sources:
     - url: http://auth-83051f68-ec6c-44e0-afe5-bd8902acff57.cdn.spilcloud.com/quake
       maps:

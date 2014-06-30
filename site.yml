@@ -1,4 +1,4 @@
-#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --ask-vault-pass --timeout=30
+#!/usr/bin/env ansible-playbook -i hosts --ask-sudo-pass --timeout=30
 
 ---
 - name: Openarena
@@ -7,7 +7,7 @@
   remote_user: johanadm
   sudo: yes
   vars_files:
-    - vars.yaml
+    - secret_vars.yaml
 
   roles:
     - { role: munerator, tags: ['munerator'] }
