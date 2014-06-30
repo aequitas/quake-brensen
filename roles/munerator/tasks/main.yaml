@@ -3,7 +3,7 @@
   apt: name=supervisor state=latest
 
 - name: install munerator
-  pip: name=munerator state=latest
+  pip: name='munerator[restapi,store]' state=latest
   notify: restart munerator
 
 - name: munerator supervisor config
