@@ -10,7 +10,7 @@
   template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
   notify: restart munerator
 
-- cron: name="find assets" minute=0 hour="14,18,0" job="nice munerator assets" user=openarena
+- cron: name="periodic tasks" minute=0 hour="14,18,0" job="/usr/bin/nice /usr/local/bin/munerator periodic" user=openarena
 
 - name: install mongodb
   apt: name=mongodb state=latest
