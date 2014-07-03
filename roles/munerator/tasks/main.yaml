@@ -2,15 +2,17 @@
 - name: install supervisor
   apt: name=supervisor state=latest
 
+- pip: name=pip state=latest virtualenv=/opt/munerator
+
 - name: install munerator
-  pip: name='munerator[restapi,store]' state=latest
+  pip: name='munerator[db]' state=latest virtualenv=/opt/munerator extra_args=--process-dependency-links
   notify: restart munerator
 
 - name: munerator supervisor config
   template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
   notify: restart munerator
 
-- cron: name="periodic tasks" minute=0 hour="14,18,0" job="/usr/bin/nice /usr/local/bin/munerator periodic" user=openarena
+- cron: name="periodic tasks" minute=0 hour="14,18,0" job="/opt/munerator/bin/munerator periodic" user=openarena
 
 - name: install mongodb
   apt: name=mongodb state=latest
