@@ -1,4 +1,7 @@
 ---
+- apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen'
+- apt_key: id=7F0CEB10 state=present url=http://docs.mongodb.org/10gen-gpg-key.asc
+
 - name: install supervisor
   apt: name=supervisor state=latest
 
@@ -15,10 +18,14 @@
 - cron: name="periodic tasks" minute=0 hour="14,18,0" job="/opt/munerator/bin/munerator periodic" user=openarena
 
 - name: install mongodb
-  apt: name=mongodb state=latest
+  apt: name=mongodb-org state=latest
 
 - name: mongo config
   lineinfile: dest=/etc/mongodb.conf regexp=^dbpath= line=dbpath={{oa_base}}/munerator_db/
+  notify: restart mongodb
+
+- name: mongo config
+  lineinfile: dest=/etc/mongodb.conf line=smallfiles=true
   notify: restart mongodb
 
 - name: mongo database
