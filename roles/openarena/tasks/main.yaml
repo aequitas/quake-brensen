@@ -1,13 +1,22 @@
 ---
+- file: name={{oa_base}} state=directory
+- file: name={{oa_base}}/.openarena/baseoa state=directory owner={{oa_user}} group={{oa_user}} recurse=yes state=directory
+- file: name={{oa_base}}/logs state=directory owner={{oa_user}} group={{oa_user}} recurse=yes state=directory
+
+- user: name={{oa_user}} home={{oa_base}}
+
+- get_url: url=http://openarena.ws/request.php?4 dest={{oa_base}}/openarena-0.8.8.zip
+- unarchive: src={{oa_base}}/openarena-0.8.8.zip dest={{oa_base}}/ copy=no creates={{oa_base}}/openarena-0.8.8
+
 - name: install supervisor
   apt: name=supervisor state=latest
 
 - name: fallback maprotate
-  template: src=maps.cfg dest=/mnt/openarena/.openarena/baseoa/maps.cfg
+  template: src=maps.cfg dest={{oa_base}}/.openarena/baseoa/maps.cfg
   notify: restart openarena
 
 - name: openarena server config
-  template: src=server.cfg dest=/mnt/openarena/.openarena/baseoa/server.cfg
+  template: src=server.cfg dest={{oa_base}}/.openarena/baseoa/server.cfg
   notify: restart openarena
 
 - name: openarena supervisor config
@@ -15,7 +24,7 @@
   notify: restart openarena
 
 - name: maps
-  get_url: url={{item.0.url}}/{{item.1.name}}.pk3 dest=/mnt/openarena/baseoa/{{item.1.mapname|default(item.1.name)}}.pk3 force={{item.1.force|default(false)}}
+  get_url: url={{item.0.url}}/{{item.1.name}}.pk3 dest={{oa_base}}/openarena-0.8.8/baseoa/{{item.1.mapname|default(item.1.name)}}.pk3
   notify: restart openarena
   with_subelements:
     - map_sources

@@ -2,6 +2,7 @@
 ---
 rcon_password: 
 oa_base: /mnt/openarena
+oa_user: openarena
 map_sources:
     - url: http://auth-83051f68-ec6c-44e0-afe5-bd8902acff57.cdn.spilcloud.com/quake
       maps:
@@ -18,7 +19,6 @@ map_sources:
         - name: lsdm3_v1
         - name: map_wvwq3dm7
         - name: rota3dm2
-        - name: 79drdm5_beta2
         - name: bal3dm5
         - name: gaeldm1
         - name: map-13vast
@@ -45,7 +45,6 @@ map_sources:
         - name: monolith
         - name: pom_bots
         - name: sokar3dm5
-        - name: CMP1-dm6
         - name: batcula
         - name: gon2
         - name: map-charon3dm13
@@ -55,14 +54,12 @@ map_sources:
         - name: HandsOfGod
         - name: boxen
         - name: hal_palindrome
-        - name: map-estatica-cardigan
         - name: mythology
         - name: pukka3dm2
         - name: stralegeo1v2
         - name: LetGo_q3a
         - name: bubctf1
         - name: hibernia
-        - name: map-kellblack
         - name: nook3dm2pro
         - name: pukka3tourney2
         - name: syq3dm1
@@ -80,7 +77,6 @@ map_sources:
         - name: q3ctf4+
         - name: trajectory
         - name: TeamTemple_q3a
-        - name: cmp1-dm5
         - name: jaxdm9
         - name: map-post
         - name: q3dade12
@@ -95,7 +91,6 @@ map_sources:
         - name: deadmeat
         - name: klcurves
         - name: map-rjlctf2
-        - name: qbeast
         - name: yog3dm2
         - name: alkdm14
         - name: distonic_small

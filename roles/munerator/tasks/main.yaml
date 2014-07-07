@@ -2,32 +2,39 @@
 - apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen'
 - apt_key: id=7F0CEB10 state=present url=http://docs.mongodb.org/10gen-gpg-key.asc
 
-- name: install supervisor
-  apt: name=supervisor state=latest
+- apt: name=git state=latest
+- apt: name=libzmq-dev state=latest
+- apt: name=python-dev state=latest
+- apt: name=python-virtualenv state=latest
+- apt: name=supervisor state=latest
 
 - pip: name=pip state=latest virtualenv=/opt/munerator
 
-- name: install munerator
-  pip: name='munerator[db]' state=latest virtualenv=/opt/munerator extra_args=--process-dependency-links
+- pip: name='munerator' state=latest virtualenv=/opt/munerator
   notify: restart munerator
 
-- name: munerator supervisor config
-  template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
+- pip: name='git+https://github.com/hellerstanislav/eve-mongoengine.git@01e983b0dcf80b95cdbee799e78405559cc6cca7#egg=eve_mongoengine' virtualenv=/opt/munerator
+- pip: name='git+https://github.com/nicolaiarocci/eve.git@c89f2b35a852a0d08b4a48d2c53bf759958125f3#egg=eve' virtualenv=/opt/munerator
+- pip: name='munerator[db]' state=latest virtualenv=/opt/munerator
   notify: restart munerator
+
+- template: src=muneratorrc dest=/etc/muneratorrc
+  notify: restart munerator
+
+- template: src=munerator.conf dest=/etc/supervisor/conf.d/munerator.conf
+  notify:
+    - reread supervisor
+    - restart munerator
 
 - cron: name="periodic tasks" minute=0 hour="14,18,0" job="/opt/munerator/bin/munerator periodic" user=openarena
 
-- name: install mongodb
-  apt: name=mongodb-org state=latest
+- apt: name=mongodb-org state=latest update_cache=yes
 
-- name: mongo config
-  lineinfile: dest=/etc/mongodb.conf regexp=^dbpath= line=dbpath={{oa_base}}/munerator_db/
+- lineinfile: dest=/etc/mongod.conf regexp=^dbpath= line=dbpath={{oa_base}}/munerator_db/
   notify: restart mongodb
 
-- name: mongo config
-  lineinfile: dest=/etc/mongodb.conf line=smallfiles=true
+- lineinfile: dest=/etc/mongod.conf line=smallfiles=true
   notify: restart mongodb
 
-- name: mongo database
-  file: dest={{oa_base}}/munerator_db state=directory owner=mongodb group=mongodb
+- file: dest={{oa_base}}/munerator_db state=directory owner=mongodb group=mongodb
   notify: restart mongodb

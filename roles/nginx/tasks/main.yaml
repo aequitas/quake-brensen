@@ -2,5 +2,5 @@
   apt: name=nginx state=installed
 
 - name: nginx config
-  template: src=quake.conf dest=/etc/nginx/vhosts/quake.conf
+  template: src=quake.conf dest=/etc/nginx/sites-enabled/quake.conf
   notify: restart nginx

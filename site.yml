@@ -2,7 +2,8 @@
 
 ---
 - name: Openarena
-  hosts: brensen
+  hosts:
+    - linode
   user: root
   remote_user: johanadm
   sudo: yes
