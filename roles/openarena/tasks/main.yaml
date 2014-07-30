@@ -8,6 +8,9 @@
 - get_url: url=http://openarena.ws/request.php?4 dest={{oa_base}}/openarena-0.8.8.zip
 - unarchive: src={{oa_base}}/openarena-0.8.8.zip dest={{oa_base}}/ copy=no creates={{oa_base}}/openarena-0.8.8
 
+- command: find {{oa_base}} -type d -exec chmod a+rx {} \;
+- command: find {{oa_base}} -type f -exec chmod a+r {} \;
+
 - name: install supervisor
   apt: name=supervisor state=latest
 
